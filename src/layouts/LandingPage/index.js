@@ -17,7 +17,7 @@ const LandingPageLayout = ({
             style={{
                 backgroundImage: `url(${Hero})`
             }}>
-                {heading && <h1 className='relative px-2.5 text-white uppercase z-10 text-xl text-center md:text-6xl'>
+                {heading && <h1 className='relative px-2.5 text-white uppercase z-10 text-4xl text-center md:text-6xl'>
                     {heading}
                     </h1>}
 
