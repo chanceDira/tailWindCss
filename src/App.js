@@ -10,7 +10,7 @@ function App() {
    <Switch>
     
      <Route path='/'>
-       <LandingPageLayout>
+       <LandingPageLayout heading='Visit Rwanda'>
           <HomePage />
        </LandingPageLayout>
      </Route>
