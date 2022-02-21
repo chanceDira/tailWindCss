@@ -1,4 +1,5 @@
 import React from 'react'
+import Footer from '../../components/Footer'
 import Header from '../../components/Header'
 
 const LandingPageLayout = ({
@@ -28,6 +29,8 @@ const LandingPageLayout = ({
             <div className='w-full max-w-7xl mx-auto'>
                 {otherProps.children}
             </div>
+
+            <Footer />
 
         </div>
     )
