@@ -1,13 +1,18 @@
 import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { setActive } from "../../redux/actions/activeActions";
 
 const Header = ({ ...otherProps }) => {
 
-    const [active, setActive] = useState(false)
+    // const [active, setActive] = useState(false)
 
-    const onClick = () => {
-        setActive(!active)
-    }
+    // const onClick = () => {
+    //     setActive(!active)
+    // }
+
+  const active = useSelector(state => state.active);
+  const dispatch = useDispatch();
 
   return (
     <header className="bg-white relative">
@@ -21,7 +26,7 @@ const Header = ({ ...otherProps }) => {
         </div>
 
         <div 
-            onClick={onClick}
+            onClick={()=> dispatch(setActive())}
             className={`
             md:hidden uppercase
             `}
@@ -36,13 +41,13 @@ const Header = ({ ...otherProps }) => {
         `}>
           <ul className="md:flex md:flex-row">
             <li className="list-none md:mr-5">
-              <Link className="flex w-full text-base uppercase hover:text-red-600 cursor-pointer pt-2.5 px-2.5">Services</Link>
+              <Link to='/services' className="flex w-full text-base uppercase hover:text-red-600 cursor-pointer pt-2.5 px-2.5">Services</Link>
             </li>
             <li className="list-none md:mr-5">
-              <Link className="flex w-full text-base uppercase hover:text-red-600 cursor-pointer pt-2.5 px-2.5">About Us</Link>
+              <Link to='/aboutus' className="flex w-full text-base uppercase hover:text-red-600 cursor-pointer pt-2.5 px-2.5">About Us</Link>
             </li>
             <li className="list-none md:mr-5">
-              <Link className="flex w-full text-base uppercase hover:text-red-600 cursor-pointer pt-2.5 px-2.5">Contact Us</Link>
+              <Link to='.contactus' className="flex w-full text-base uppercase hover:text-red-600 cursor-pointer pt-2.5 px-2.5">Contact Us</Link>
             </li>
           </ul>
         </nav>
